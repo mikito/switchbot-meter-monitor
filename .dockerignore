@@ -1,0 +1,7 @@
+.git
+node_modules
+README.md
+.gitignore
+.DS_Store
+.env
+data/data.json

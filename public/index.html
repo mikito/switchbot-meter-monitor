@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Monitor</title>
+
+  <!-- mobile web app settings -->
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon" href="images/icon.png">
+  <link rel="icon" type="image/png" href="images/icon.png">
+  <meta name="theme-color" content="#00ADB5">
+
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.2.1/chart.umd.min.js"
+    integrity="sha512-GCiwmzA0bNGVsp1otzTJ4LWQT2jjGJENLGyLlerlzckNI30moi2EQT0AfRI7fLYYYDKR+7hnuh35r3y1uJzugw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"
+    integrity="sha512-+H4iLjY3JsKiF2V6N366in5IQHj2uEsGV7Pp/GRcm0fn76aPAk5V8xB6n8fQhhSonTqTXs/klFz4D0GIn6Br9g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-adapter-moment/1.0.1/chartjs-adapter-moment.min.js"
+    integrity="sha512-hVy4KxCKgnXi2ok7rlnlPma4JHXI1VPQeempoaclV1GwRHrDeaiuS1pI6DVldaj5oh6Opy2XJ2CTljQLPkaMrQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script type="text/javascript" src="/javascripts/client.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="number-layout">
+      <div class="panel">
+        <div class="label">Temperature</div>
+        <div class="item">
+          <div class="item-text">
+            <span id="temperature">--</span><span class="unit">℃</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="panel">
+        <div class="label">Humidity</div>
+            <div class="item">
+              <div class="item-text">
+                <span id="humidity">--</span><span class="unit">%</span>
+              </div>
+            </div>
+      </div>
+    </div>
+
+    <div class="chart-layout">
+      <div class="panel">
+        <div class="label">Graph</div>
+        <div class="item">
+          <canvas id="chart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="message" id="error-message"></div>
+  </div>
+  </body>
+</html>
