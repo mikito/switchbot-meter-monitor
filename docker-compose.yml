@@ -16,8 +16,6 @@ services:
     image: switchbot-meter-monitor
     env_file:
       - .env
-    volumes:
-      - ./:/app
     command: ["node", "/app/tools/list_devices.js"]
   appdev:
     profiles: [appdev]
@@ -31,4 +29,5 @@ services:
       - .env
     volumes:
       - ./:/app
-    command: ["yarn", "start"] 
+    # command: ["yarn", "install"] 
+    command: sh -c 'yarn install && yarn start'
