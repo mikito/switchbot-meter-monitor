@@ -10,17 +10,19 @@ services:
     volumes:
       - ./data:/app/data
     restart: always
+
   devices:
     profiles: [devices]
-    build: ./
-    image: switchbot-meter-monitor
+    image: node:18-alpine
     env_file:
       - .env
-    command: ["node", "/app/tools/list_devices.js"]
+    volumes:
+      - ./:/app
+    command: sh -c 'cd app && yarn install && node /app/tools/list_devices.js'
+
   appdev:
     profiles: [appdev]
-    build: ./
-    image: switchbot-meter-monitor
+    image: node:18-alpine
     ports:
       - ${APP_PORT:-3000}:3000
     environment:
@@ -29,5 +31,4 @@ services:
       - .env
     volumes:
       - ./:/app
-    # command: ["yarn", "install"] 
-    command: sh -c 'yarn install && yarn start'
+    command: sh -c 'cd app && yarn install && yarn start'
